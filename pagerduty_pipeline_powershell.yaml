@@ -1,5 +1,5 @@
 resources:
-  - name: pagerDutyCheckRepo
+  - name: pagerDutyCheckRepo1
     type: GitRepo
     configuration:
       gitProvider: JohnpGithub
@@ -7,18 +7,12 @@ resources:
 pipelines:
   - name: pipeline_pagerduty_check
     steps:
-      - name: pagerduty_check
-        type: Bash
-        configuration:
-          inputResources:
-            - name: pagerDutyCheckRepo
-
       - name: pagerduty_powershell_check
         type: PowerShell
         configuration:
           nodePool: Windows
           inputResources:
-            - name: pagerDutyCheckRepo
+            - name: pagerDutyCheckRepo1
         execution:
           onExecute:
             - local pagerDutyIntegrationName=$(get_integration_name --type "PagerDuty")
