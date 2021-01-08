@@ -5,7 +5,7 @@ resources:
       gitProvider: JohnpGithub
       path: peters95/jfrog-pipelines-health-check
 pipelines:
-  - name: pipeline_pagerduty_check
+  - name: pipeline_pagerduty_check_powershell
     steps:
       - name: pagerduty_powershell_check
         type: PowerShell
