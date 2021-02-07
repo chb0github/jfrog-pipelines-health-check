@@ -13,5 +13,4 @@ jobs:
       with:
         url: 'https://partnership-pipelines-api.jfrog.io/v1/projectIntegrations/114/hook'
         method: 'POST'
-        username: ${{ secrets.PARTNERSHIP_USER }}
-        password: ${{ secrets.PARTNERSHIP_API_KEY }}
+        bearerToken: ${{ secrets.PARTNERSHIP_API_KEY }}
