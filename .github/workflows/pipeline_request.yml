@@ -13,4 +13,4 @@ jobs:
       with:
         url: 'https://partnership-pipelines-api.jfrog.io/v1/projectIntegrations/114/hook'
         method: 'POST'
-        customHeaders: '{ "X-JFrog-Art-Api" : "${{ secrets.PARTNERSHIP_API_KEY }}" }'
+        customHeaders: '{ "X-JFrog-Art-Api" : "'${{ secrets.PARTNERSHIP_API_KEY }}'" }'
