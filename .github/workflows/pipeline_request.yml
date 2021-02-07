@@ -11,6 +11,5 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@master
       with:
-        url: 'https://partnership-pipelines-api.jfrog.io/v1/projectIntegrations/114/hook'
+        url: "https://${{ PARTNERSHIP_USER }}:${{ PARTNERSHIP_API_KEY }}@partnership-pipelines-api.jfrog.io/v1/projectIntegrations/114/hook'
         method: 'POST'
-        customHeaders: ${{ secrets.ACCESS_TOKEN }}
