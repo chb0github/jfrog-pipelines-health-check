@@ -14,7 +14,7 @@ pipelines:
             - name: PagerDutyRoutingKey
             - name: PartnerEngineeringPagerDuty
           inputResources:
-            - name: healthCheckRepo
+            - name: christianb
         execution:
           onExecute:
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
