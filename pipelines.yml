@@ -10,6 +10,9 @@ pipelines:
       - name: health_check
         type: Bash
         configuration:
+          priority: 0
+          environmentVariables:
+            ROUTING_KEY: '${int_PagerDutyRoutingKey_NOTIFY_ROUTING_KEY}'
           integrations:
             - name: PagerDutyRoutingKey
             - name: PartnerEngineeringPagerDuty
@@ -18,4 +21,4 @@ pipelines:
         execution:
           onExecute:
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
-            - send_notification PartnerEngineeringPagerDuty --routingkey $int_PagerDutyRoutingKey_NOTIFY_ROUTING_KEY --text "hello world from bash run number $run_number" 
+            - send_notification PartnerEngineeringPagerDuty --routingkey $ROUTING_KEY --text "hello world from bash run number $run_number" 
