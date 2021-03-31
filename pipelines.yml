@@ -20,4 +20,5 @@ pipelines:
             - name: christianb
         execution:
           onExecute:
-            - echo "Running $pipeline_name | $step_name on node ID '$ROUTING_KEY'"
+            - echo "Running $pipeline_name | $step_name with routing key '$ROUTING_KEY'"
+            - send_notification PagerDuty --routingkey $ROUTING_KEY --text "hello world from bash run number $run_number"
