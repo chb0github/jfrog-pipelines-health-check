@@ -12,7 +12,7 @@ pipelines:
         configuration:
           priority: 0
           environmentVariables:
-            ROUTING_KEY: '${int_PagerDutyRoutingKey_NOTIFY_ROUTING_KEY}'
+            ROUTING_KEY: '${int_PagerDuty_NOTIFY_ROUTING_KEY}'
           integrations:
             - name: PagerDuty
             - name: PartnerEngineeringPagerDuty
